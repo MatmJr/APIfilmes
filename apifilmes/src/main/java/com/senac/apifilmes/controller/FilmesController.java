@@ -22,6 +22,6 @@ public class FilmesController {
 
     @GetMapping
     public ResponseEntity<List<Filmes>> todosFilmes(){
-        return new ResponseEntity<>(filmesService.todosFilmes(), HttpStatus.OK);
+        return ResponseEntity.ok(filmesService.todosFilmes());
     }
 }
