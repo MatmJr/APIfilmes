@@ -12,5 +12,4 @@ public class ApifilmesApplication {
 		SpringApplication.run(ApifilmesApplication.class, args);
 	}
 
-
 }

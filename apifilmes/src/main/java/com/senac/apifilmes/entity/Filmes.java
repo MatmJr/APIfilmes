@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "filmes")
