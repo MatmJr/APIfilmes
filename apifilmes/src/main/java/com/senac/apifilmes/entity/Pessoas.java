@@ -14,8 +14,10 @@ public class Pessoas {
     private int id;
     @Column(nullable = false, length = 100)
     private String nome;
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
+    @Column(nullable = false,unique = true, length = 100)
+    private String cpf;
 
     public int getId() {
         return id;
@@ -39,5 +41,13 @@ public class Pessoas {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
