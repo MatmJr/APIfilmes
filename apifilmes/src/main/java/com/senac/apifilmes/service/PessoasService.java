@@ -1,6 +1,7 @@
 package com.senac.apifilmes.service;
 
 import com.senac.apifilmes.entity.Pessoas;
+import com.senac.apifilmes.exception.PessoaNaoEncontradaException;
 import com.senac.apifilmes.repository.PessoasRepository;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,11 @@ public class PessoasService {
 
     public List<Pessoas> todasPessoas() {
         return pessoasRepository.findAll();
+    }
+
+    public Pessoas buscarPessoasPorId(Integer id) {
+        return pessoasRepository.findById(id).orElseThrow(
+                ()->new PessoaNaoEncontradaException("Pessoa não encontrada")
+        );
     }
 }

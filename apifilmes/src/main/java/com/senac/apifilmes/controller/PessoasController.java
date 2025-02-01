@@ -32,5 +32,8 @@ public class PessoasController {
 
     //3. Encontrar uma pessoa pelo nome
     }
-
+    @GetMapping("{id}")
+    public ResponseEntity<Pessoas> buscarPessoa(@PathVariable Integer id) {
+        return ResponseEntity.ok(pessoasService.buscarPessoasPorId(id));
+    }
 }
